@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   const isChecklist = list === 'checklist';
 
   const emailPayload = {
-    from: 'Ryan David <ryan@k8ai.com>',
+    from: 'Ryan David <ryan@k-8ai.com>',
     to: [email],
     subject: isChecklist
       ? 'Your K-8 AI Policy Checklist'
