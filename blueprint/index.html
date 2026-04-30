@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-8 AI Blueprint — Ready-to-Use Documents for School Leaders</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2334322d'/%3E%3Ctext x='2' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3EK%3C/text%3E%3Ctext x='13' y='23' font-family='Georgia,serif' font-size='19' font-weight='bold' fill='%230081f2'%3E/%3C/text%3E%3Ctext x='21' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3E8%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="Ready-to-use AI policy documents for K-8 school leaders. No consultants. No theory. Download and use this week." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:     #f8f8f7;
+      --ink:       #34322d;
+      --ink-mid:   #5c5a55;
+      --ink-light: #9a9890;
+      --blue:      #0081f2;
+      --blue-dk:   #0068c4;
+      --white:     #ffffff;
+      --rule:      #dddbd6;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+      --max:       1080px;
+      --pad:       clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--sans); cursor: pointer; }
+
+    .container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--pad); }
+
+    /* WORDMARK */
+    .wordmark { display: inline-flex; align-items: baseline; font-family: var(--serif); font-size: 1.3rem; letter-spacing: -0.01em; color: var(--ink); line-height: 1; }
+    .wordmark .slash { color: var(--blue); margin-inline: 0.04em; }
+    .wordmark .small { font-family: var(--sans); font-weight: 300; font-size: 1rem; letter-spacing: 0.04em; }
+    .wordmark-sub { font-family: var(--sans); font-size: 0.575rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-light); margin-top: 0.2rem; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--rule); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.9rem; }
+    .nav-back { font-size: 0.8rem; color: var(--ink-light); display: flex; align-items: center; gap: 0.4rem; letter-spacing: 0.03em; transition: color 0.15s; }
+    .nav-back:hover { color: var(--blue); }
+    .nav-back::before { content: '←'; font-size: 0.9rem; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.65em 1.5em; border: none; border-radius: 2px; cursor: pointer; transition: background 0.15s, color 0.15s; white-space: nowrap; width: 100%; }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-dk); }
+    .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+    .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+    /* HERO */
+    .hero { padding-block: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 1.75rem; height: 2px; background: var(--blue); flex-shrink: 0; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 1rem; max-width: 22ch; }
+    .hero h1 em { font-style: italic; }
+    .hero-sub { font-size: clamp(1rem, 1.5vw, 1.0625rem); color: var(--ink-mid); line-height: 1.7; max-width: 52ch; margin-bottom: 0; }
+
+    /* VALUE BAR */
+    .value-bar { border-bottom: 1px solid var(--rule); background: var(--white); }
+    .value-bar-inner { display: flex; gap: 0; }
+    .value-item { flex: 1; padding: 1.1rem 1.5rem; border-right: 1px solid var(--rule); display: flex; align-items: center; gap: 0.75rem; }
+    .value-item:last-child { border-right: none; }
+    .value-slash { color: var(--blue); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+    .value-text { font-size: 0.8rem; color: var(--ink-mid); line-height: 1.4; }
+
+    /* FUNNEL SECTION */
+    .funnel { padding-block: clamp(3rem, 6vw, 5rem); }
+    .funnel-label { font-size: 0.575rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    .funnel-hed { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.2; margin-bottom: 0.5rem; }
+    .funnel-sub { font-size: 0.9375rem; color: var(--ink-mid); margin-bottom: 3rem; max-width: 52ch; line-height: 1.65; }
+
+    /* PRODUCT CARDS */
+    .products { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
+    .product-card { background: var(--cream); padding: clamp(1.5rem, 3vw, 2rem); display: flex; flex-direction: column; position: relative; }
+    .product-card.featured { background: var(--ink); }
+    .product-badge { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .product-badge::before { content: ''; display: block; width: 1.25rem; height: 2px; background: var(--blue); flex-shrink: 0; }
+    .product-card.featured .product-badge { color: var(--blue); }
+    .product-name { font-family: var(--serif); font-size: clamp(1.1rem, 1.75vw, 1.4rem); line-height: 1.2; margin-bottom: 0.75rem; color: var(--ink); }
+    .product-card.featured .product-name { color: var(--cream); }
+    .product-desc { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 1.5rem; flex: 1; }
+    .product-card.featured .product-desc { color: #8a8780; }
+    .product-includes { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0; }
+    .product-includes li { font-size: 0.8125rem; color: var(--ink-mid); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.6rem; align-items: baseline; line-height: 1.4; }
+    .product-card.featured .product-includes li { color: #8a8780; border-bottom-color: #4a4840; }
+    .product-includes li::before { content: '/'; color: var(--blue); font-weight: 600; font-size: 0.75rem; flex-shrink: 0; }
+    .product-includes li:first-child { border-top: 1px solid var(--rule); }
+    .product-card.featured .product-includes li:first-child { border-top-color: #4a4840; }
+    .product-price { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .price-amount { font-family: var(--serif); font-size: 2.25rem; line-height: 1; color: var(--ink); }
+    .product-card.featured .price-amount { color: var(--cream); }
+    .price-note { font-size: 0.75rem; color: var(--ink-light); }
+    .product-card.featured .price-note { color: #6a6860; }
+    .product-value { font-size: 0.7rem; color: var(--ink-light); letter-spacing: 0.04em; margin-bottom: 1.25rem; }
+    .product-card.featured .product-value { color: #6a6860; }
+    .product-card.featured .btn-primary { background: var(--blue); }
+    .product-card.featured .btn-primary:hover { background: var(--blue-dk); }
+
+    /* WHAT'S INSIDE (bundle) */
+    .bundle-grid { border: 1px solid var(--rule); border-top: none; }
+    .bundle-grid-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--rule); }
+    .bundle-doc { background: var(--cream); padding: 1.25rem; }
+    .bundle-doc-num { font-family: var(--serif); font-size: 1.25rem; color: var(--rule); line-height: 1; margin-bottom: 0.5rem; }
+    .bundle-doc-name { font-size: 0.8125rem; color: var(--ink); line-height: 1.4; font-weight: 500; margin-bottom: 0.25rem; }
+    .bundle-doc-desc { font-size: 0.75rem; color: var(--ink-light); line-height: 1.4; }
+
+    /* GUARANTEE */
+    .guarantee { border-top: 1px solid var(--rule); padding-block: 2rem; }
+    .guarantee-inner { display: flex; align-items: center; gap: 2rem; }
+    .guarantee-mark { font-family: var(--serif); font-size: 2.5rem; color: var(--blue); line-height: 1; flex-shrink: 0; }
+    .guarantee-text { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.65; }
+    .guarantee-text strong { color: var(--ink); font-weight: 500; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--rule); padding-block: 1.75rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.75rem; color: var(--ink-light); line-height: 1.5; }
+    .footer-nav { display: flex; gap: 1.5rem; }
+    .footer-nav a { font-size: 0.75rem; color: var(--ink-light); transition: color 0.15s; }
+    .footer-nav a:hover { color: var(--blue); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .products { grid-template-columns: 1fr; }
+      .bundle-grid-inner { grid-template-columns: 1fr 1fr; }
+      .value-bar-inner { flex-wrap: wrap; }
+      .value-item { flex: 1 1 50%; border-bottom: 1px solid var(--rule); }
+    }
+    @media (max-width: 540px) {
+      .bundle-grid-inner { grid-template-columns: 1fr; }
+      .value-item { flex: 1 1 100%; }
+      .guarantee-inner { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <div>
+          <div class="wordmark">K-8<span class="slash">/</span><span class="small">AI</span></div>
+          <div class="wordmark-sub">Blueprint — Ready-to-Use Documents</div>
+        </div>
+        <a href="https://k-8ai.com" class="nav-back">Back to K-8 AI</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow fade-up">For K-8 School Leaders</div>
+      <h1 class="fade-up delay-1">The documents your school needs.<br><em>Ready to use this week.</em></h1>
+      <p class="hero-sub fade-up delay-2">Every template, policy, and planning tool a K-8 school leader needs to implement AI responsibly — written by someone doing this work right now, not a consultant.</p>
+    </div>
+  </section>
+
+  <!-- VALUE BAR -->
+  <div class="value-bar">
+    <div class="container">
+      <div class="value-bar-inner">
+        <div class="value-item"><span class="value-slash">/</span><span class="value-text">Instant download after purchase</span></div>
+        <div class="value-item"><span class="value-slash">/</span><span class="value-text">Fully editable Word documents</span></div>
+        <div class="value-item"><span class="value-slash">/</span><span class="value-text">Built for K-8 without IT staff</span></div>
+        <div class="value-item"><span class="value-slash">/</span><span class="value-text">Updated for 2026 policy changes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="funnel">
+    <div class="container">
+      <div class="funnel-label">The Blueprint Collection</div>
+      <h2 class="funnel-hed">Start where you need to. Get everything when you're ready.</h2>
+      <p class="funnel-sub">Each document solves a real problem your school faces right now. The Complete Blueprint gives you all nine — every policy, template, and tool — at a significant discount.</p>
+
+      <div class="products">
+
+        <!-- $7 ENTRY -->
+        <div class="product-card">
+          <div class="product-badge">Start here</div>
+          <div class="product-name">AI Parent Communication Letter</div>
+          <p class="product-desc">The first question every K-8 leader faces: how do I explain AI to families? This letter answers it — clearly, honestly, and in plain English. Customize and send this week.</p>
+          <ul class="product-includes">
+            <li>Ready-to-send family letter template</li>
+            <li>Covers teacher use, student use, and privacy</li>
+            <li>Addresses academic honesty directly</li>
+            <li>Works as email, print, or website PDF</li>
+            <li>Includes administrator notes throughout</li>
+          </ul>
+          <div class="product-price">
+            <span class="price-amount">$7</span>
+            <span class="price-note">one-time</span>
+          </div>
+          <button class="btn btn-primary" onclick="window.location.href='STRIPE_LINK_7'">Get the Letter — $7</button>
+        </div>
+
+        <!-- $17 MID -->
+        <div class="product-card">
+          <div class="product-badge">Most focused</div>
+          <div class="product-name">The 90-Day AI Launch Plan</div>
+          <p class="product-desc">A complete week-by-week roadmap for K-8 schools implementing AI without a dedicated IT department. Policy, staff orientation, piloting, and expansion — sequenced and ready to follow.</p>
+          <ul class="product-includes">
+            <li>Full 90-day implementation timeline</li>
+            <li>Month 1: Policy and governance</li>
+            <li>Month 2: Staff orientation and tool vetting</li>
+            <li>Month 3: Pilot with willing teachers</li>
+            <li>Month 4+: Evaluate, adjust, expand</li>
+          </ul>
+          <div class="product-price">
+            <span class="price-amount">$17</span>
+            <span class="price-note">one-time</span>
+          </div>
+          <button class="btn btn-primary" onclick="window.location.href='STRIPE_LINK_17'">Get the Plan — $17</button>
+        </div>
+
+        <!-- $97 BUNDLE -->
+        <div class="product-card featured">
+          <div class="product-badge">Best value</div>
+          <div class="product-name">The Complete K-8 AI Blueprint</div>
+          <p class="product-desc">All 9 documents. Every policy, template, survey, checklist, and timeline your school needs — in one download. If bought individually, these would cost $150+.</p>
+          <ul class="product-includes">
+            <li>90-Day AI Launch Plan</li>
+            <li>Staff Meeting Facilitation Guide</li>
+            <li>AI Acceptable Use Policy — Family Edition</li>
+            <li>AI Acceptable Use Policy — Student Edition</li>
+            <li>AI Acceptable Use Policy — Staff Edition</li>
+            <li>AI Staff Readiness Survey</li>
+            <li>Parent Communication Letter</li>
+            <li>Vendor Privacy Evaluation Checklist</li>
+            <li>AI Policy Checklist</li>
+          </ul>
+          <div class="product-price">
+            <span class="price-amount">$97</span>
+            <span class="price-note">one-time</span>
+          </div>
+          <div class="product-value">9 documents · Instant download · Fully editable</div>
+          <button class="btn btn-primary" onclick="window.location.href='STRIPE_LINK_97'">Get the Complete Blueprint — $97</button>
+        </div>
+
+      </div>
+
+      <!-- BUNDLE DETAIL -->
+      <div class="bundle-grid">
+        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--rule); background: var(--white);">
+          <div style="font-size: 0.575rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--blue);">What's inside the Complete Blueprint</div>
+        </div>
+        <div class="bundle-grid-inner">
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">01</div>
+            <div class="bundle-doc-name">90-Day AI Launch Plan</div>
+            <div class="bundle-doc-desc">Week-by-week rollout roadmap built for K-8 without IT staff</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">02</div>
+            <div class="bundle-doc-name">Staff Meeting Facilitation Guide</div>
+            <div class="bundle-doc-desc">Run a productive AI conversation with your staff this month</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">03</div>
+            <div class="bundle-doc-name">Acceptable Use Policy — Family</div>
+            <div class="bundle-doc-desc">What families need to know, in language they'll actually read</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">04</div>
+            <div class="bundle-doc-name">Acceptable Use Policy — Student</div>
+            <div class="bundle-doc-desc">Age-appropriate expectations for K-8 students using AI</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">05</div>
+            <div class="bundle-doc-name">Acceptable Use Policy — Staff</div>
+            <div class="bundle-doc-desc">Clear guidelines for how staff may and may not use AI tools</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">06</div>
+            <div class="bundle-doc-name">Staff AI Readiness Survey</div>
+            <div class="bundle-doc-desc">Know where your staff actually stands before you build a plan</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">07</div>
+            <div class="bundle-doc-name">Parent Communication Letter</div>
+            <div class="bundle-doc-desc">Ready-to-send letter explaining AI to families proactively</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">08</div>
+            <div class="bundle-doc-name">Vendor Privacy Checklist</div>
+            <div class="bundle-doc-desc">FERPA/COPPA vetting questions for any AI tool before approval</div>
+          </div>
+          <div class="bundle-doc">
+            <div class="bundle-doc-num">09</div>
+            <div class="bundle-doc-name">AI Policy Checklist</div>
+            <div class="bundle-doc-desc">Five things every K-8 school must get right before going further</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUARANTEE -->
+      <div class="guarantee">
+        <div class="guarantee-inner">
+          <div class="guarantee-mark">/</div>
+          <p class="guarantee-text"><strong>These documents work or your money back.</strong> Every template has been written and used in a real K-8 school. If you purchase and find that a document doesn't deliver what it promises, email ryan@k-8ai.com and you'll receive a full refund — no questions asked.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="wordmark" style="font-size: 1rem; margin-bottom: 0.25rem;">K-8<span class="slash">/</span><span class="small">AI</span></div>
+          <div class="footer-copy">Written by Ryan David. 20+ years in K-12. No courses. No certifications. Just what works.<br>&copy; 2026 K-8 AI. All rights reserved.</div>
+        </div>
+        <nav class="footer-nav">
+          <a href="https://k-8ai.com">Home</a>
+          <a href="https://k-8ai.com#subscribe">Free Checklist</a>
+          <a href="mailto:ryan@k-8ai.com">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
