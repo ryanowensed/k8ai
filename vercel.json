@@ -1,1 +1,8 @@
-{}
+{
+  "rewrites": [
+    {
+      "source": "/blueprint",
+      "destination": "/blueprint/index.html"
+    }
+  ]
+}
