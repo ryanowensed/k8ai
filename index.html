@@ -326,7 +326,18 @@
     .quote-attr { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
     .quote-name { font-size: 0.875rem; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; }
     .quote-role { font-size: 0.75rem; color: var(--ink-light); letter-spacing: 0.04em; text-transform: uppercase; }
-
+/* BLUEPRINT TEASER */
+    .blueprint-teaser { padding-block: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--rule); background: var(--ink); }
+    .blueprint-teaser-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+    .blueprint-teaser .section-label { color: var(--blue); margin-bottom: 1rem; }
+    .blueprint-teaser .section-hed { color: var(--cream); margin-bottom: 1.25rem; }
+    .blueprint-teaser .body-copy { color: #8a8780; font-size: 1rem; line-height: 1.7; }
+    .blueprint-teaser-cta { display: flex; align-items: center; gap: 1.25rem; margin-top: 2rem; flex-wrap: wrap; }
+    .blueprint-teaser-note { font-size: 0.75rem; color: #6a6860; letter-spacing: 0.03em; }
+    .blueprint-doc-list { display: flex; flex-direction: column; gap: 0; border: 1px solid #4a4840; }
+    .blueprint-doc-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.8rem 1rem; border-bottom: 1px solid #4a4840; font-size: 0.875rem; color: #8a8780; line-height: 1.4; }
+    .blueprint-doc-item:last-child { border-bottom: none; }
+    .blueprint-slash { color: var(--blue); font-weight: 600; font-size: 0.8rem; flex-shrink: 0; }
     /* NEWSLETTER STRIP */
     .newsletter-strip {
       padding-block: clamp(3rem, 6vw, 5rem);
@@ -397,6 +408,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      .blueprint-teaser-inner,
       .hero-inner,
       .problem-inner,
       .about-inner,
@@ -661,7 +673,36 @@
       </div>
     </div>
   </section>
-
+<!-- BLUEPRINT TEASER -->
+  <section class="blueprint-teaser">
+    <div class="container">
+      <div class="blueprint-teaser-inner">
+        <div class="blueprint-teaser-left">
+          <div class="section-label">The K-8 AI Blueprint</div>
+          <h2 class="section-hed">Want all of this already done for you?</h2>
+          <p class="body-copy">The free checklist tells you what to build. The Blueprint is all of it — every policy, template, survey, and timeline already written, fully editable, and ready to put your school's name on.</p>
+          <p class="body-copy" style="margin-top: 0.75rem;">Start with one document for $7. Get everything for $97.</p>
+          <div class="blueprint-teaser-cta">
+            <a href="https://blueprint.k-8ai.com" class="btn btn-primary btn-lg">See the Blueprint</a>
+            <span class="blueprint-teaser-note">9 done-for-you documents · Instant download</span>
+          </div>
+        </div>
+        <div class="blueprint-teaser-right">
+          <div class="blueprint-doc-list">
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>90-Day AI Launch Plan</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>Staff Meeting Facilitation Guide</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>AI Acceptable Use Policy — Family</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>AI Acceptable Use Policy — Student</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>AI Acceptable Use Policy — Staff</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>Staff AI Readiness Survey</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>Parent Communication Letter</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>Vendor Privacy Checklist</div>
+            <div class="blueprint-doc-item"><span class="blueprint-slash">/</span>AI Policy Checklist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- NEWSLETTER STRIP -->
   <section class="newsletter-strip">
     <div class="container">
