@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — K-8 AI | Practical AI Implementation for K-8 School Leaders</title>
+  <meta name="description" content="Practical guidance for K-8 school leaders navigating AI — policy, privacy, staff training, family communication, and responsible implementation. Written by a Director of Technology." />
+  <meta property="og:title" content="Blog — K-8 AI" />
+  <meta property="og:description" content="Practical AI implementation guidance for K-8 school leaders. No consultants. No theory. What actually works." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2334322d'/%3E%3Ctext x='2' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3EK%3C/text%3E%3Ctext x='13' y='23' font-family='Georgia,serif' font-size='19' font-weight='bold' fill='%230081f2'%3E/%3C/text%3E%3Ctext x='21' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3E8%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --cream:      #f8f8f7;
+      --ink:        #34322d;
+      --ink-mid:    #5c5a55;
+      --ink-light:  #9a9890;
+      --blue:       #0081f2;
+      --blue-dk:    #0068c4;
+      --blue-pale:  #eaf3fe;
+      --white:      #ffffff;
+      --rule:       #dddbd6;
+      --serif:      'DM Serif Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+      --max:        1080px;
+      --pad:        clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font-family: var(--sans); }
+
+    .container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--pad); }
+
+    /* ── WORDMARK ── */
+    .wordmark {
+      display: inline-flex; align-items: baseline;
+      font-family: var(--serif); font-size: 1.3rem;
+      letter-spacing: -0.01em; color: var(--ink); line-height: 1;
+    }
+    .wordmark .slash { color: var(--blue); margin-inline: 0.04em; }
+    .wordmark .ai-label { font-family: var(--sans); font-weight: 300; font-size: 1rem; letter-spacing: 0.04em; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream); border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-block: 0.9rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 400; color: var(--ink-mid);
+      letter-spacing: 0.02em; transition: color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: var(--white);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 2px;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--blue-dk); color: var(--white); }
+
+    /* ── BLOG HEADER ── */
+    .blog-header {
+      border-bottom: 1px solid var(--rule);
+      padding-block: 3.5rem 2.5rem;
+    }
+    .blog-header .eyebrow {
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 0.75rem; display: block;
+    }
+    .blog-header h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 1rem;
+    }
+    .blog-header p {
+      font-size: 1.02rem; color: var(--ink-mid);
+      max-width: 580px; line-height: 1.7;
+    }
+
+    /* ── CATEGORY FILTER ── */
+    .filter-bar {
+      padding-block: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; gap: 0.5rem;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .filter-btn {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 2px;
+      border: 1px solid var(--rule); background: transparent;
+      color: var(--ink-mid); cursor: pointer; white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+    /* ── FEATURED ARTICLE ── */
+    .featured-wrap { padding-block: 3rem; border-bottom: 1px solid var(--rule); }
+    .featured-label {
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-light); margin-bottom: 1.25rem; display: block;
+    }
+    .featured-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      align-items: start;
+    }
+    .featured-card .meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .cat-tag {
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--blue); border: 1px solid var(--blue);
+      padding: 0.18rem 0.6rem; border-radius: 2px;
+      white-space: nowrap;
+    }
+    .cat-tag.problem  { color: #c0392b; border-color: #c0392b; }
+    .cat-tag.insight  { color: var(--blue); border-color: var(--blue); }
+    .cat-tag.vision   { color: #1a6b3c; border-color: #1a6b3c; }
+    .cat-tag.urgency  { color: #8b4513; border-color: #8b4513; }
+    .cat-tag.proof    { color: #5a4a8f; border-color: #5a4a8f; }
+    .read-time { font-size: 0.75rem; color: var(--ink-light); }
+    .featured-card h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2; letter-spacing: -0.01em;
+      margin-bottom: 0.9rem; color: var(--ink);
+    }
+    .featured-card h2 a:hover { color: var(--blue); }
+    .featured-card .excerpt {
+      font-size: 0.96rem; color: var(--ink-mid);
+      line-height: 1.7; margin-bottom: 1.25rem;
+    }
+    .read-link {
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--blue); display: inline-flex;
+      align-items: center; gap: 0.4rem; transition: gap 0.15s;
+    }
+    .read-link:hover { gap: 0.7rem; }
+    .featured-aside {
+      border-left: 1px solid var(--rule); padding-left: 3rem;
+    }
+    .featured-aside .aside-label {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-light); margin-bottom: 1rem; display: block;
+    }
+    .aside-article { padding-block: 1rem; border-bottom: 1px solid var(--rule); }
+    .aside-article:last-child { border-bottom: none; }
+    .aside-article .meta { margin-bottom: 0.5rem; }
+    .aside-article h3 {
+      font-family: var(--serif); font-size: 1rem;
+      line-height: 1.35; margin-bottom: 0.4rem;
+    }
+    .aside-article h3 a:hover { color: var(--blue); }
+    .aside-article p { font-size: 0.83rem; color: var(--ink-mid); line-height: 1.6; }
+
+    /* ── ARTICLE GRID ── */
+    .articles-section { padding-block: 3rem; }
+    .section-header {
+      display: flex; align-items: baseline;
+      justify-content: space-between; margin-bottom: 1.75rem;
+    }
+    .section-header h2 {
+      font-family: var(--serif); font-size: 1.3rem;
+      letter-spacing: -0.01em;
+    }
+    .see-all {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue);
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+    .article-card {
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex; flex-direction: column;
+      transition: background 0.15s;
+    }
+    .article-card:hover { background: var(--white); }
+    .article-card .meta { margin-bottom: 0.75rem; }
+    .article-card h3 {
+      font-family: var(--serif); font-size: 1.08rem;
+      line-height: 1.35; letter-spacing: -0.005em;
+      margin-bottom: 0.65rem; flex: 1;
+    }
+    .article-card h3 a:hover { color: var(--blue); }
+    .article-card p {
+      font-size: 0.84rem; color: var(--ink-mid);
+      line-height: 1.6; margin-bottom: 1rem;
+    }
+    .article-card .card-footer {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-top: auto;
+      padding-top: 1rem; border-top: 1px solid var(--rule);
+    }
+    .article-card .date { font-size: 0.72rem; color: var(--ink-light); }
+    .article-card .read-link { font-size: 0.72rem; }
+
+    /* ── SEO BRIEF PANEL ── */
+    .seo-panel {
+      background: var(--ink); color: var(--white);
+      padding-block: 3rem; margin-block: 3rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .seo-panel .container { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+    .seo-panel h2 {
+      font-family: var(--serif); font-size: 1.5rem;
+      line-height: 1.25; letter-spacing: -0.01em; color: var(--white);
+    }
+    .seo-panel p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 0.75rem; }
+    .seo-panel p:last-child { margin-bottom: 0; }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      border-top: 3px solid var(--ink);
+      padding-block: 3rem;
+    }
+    .cta-strip .container {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+    .cta-strip h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .cta-strip h2 em { font-style: italic; color: var(--blue); }
+    .cta-actions { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
+    .btn-primary {
+      display: inline-block; background: var(--blue); color: var(--white);
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 0.7rem 1.4rem; border-radius: 2px;
+      transition: background 0.15s; white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--blue-dk); }
+    .btn-ghost {
+      display: inline-block; color: var(--ink);
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em;
+      padding: 0.7rem 1.1rem; border: 1px solid var(--rule); border-radius: 2px;
+      transition: border-color 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding-block: 2rem;
+    }
+    .footer-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--ink-light); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: 0.78rem; color: var(--ink-light);
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--blue); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
+      .article-grid { grid-template-columns: 1fr; }
+      .cta-strip .container { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+      .seo-panel .container { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a href="https://www.k-8ai.com" class="wordmark">
+      K-8<span class="slash">/</span><span class="ai-label">AI</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://www.k-8ai.com">Home</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="https://blueprint.k-8ai.com">Blueprint</a>
+      <a href="https://www.k-8ai.com#about">About</a>
+    </div>
+    <a href="https://www.k-8ai.com#subscribe" class="nav-cta">Free Checklist</a>
+  </div>
+</nav>
+
+<!-- BLOG HEADER -->
+<header class="blog-header">
+  <div class="container">
+    <span class="eyebrow">The K-8 AI Blog</span>
+    <h1>What actually works.<br>Written for the leaders doing it.</h1>
+    <p>Practical guidance on AI policy, student privacy, staff training, and responsible implementation — written by a K-8 Director of Technology who attends the same board meetings you do.</p>
+  </div>
+</header>
+
+<!-- CATEGORY FILTER -->
+<div class="container">
+  <div class="filter-bar">
+    <button class="filter-btn active">All Articles</button>
+    <button class="filter-btn">The Problem</button>
+    <button class="filter-btn">Insight &amp; How-To</button>
+    <button class="filter-btn">Vision</button>
+    <button class="filter-btn">Policy &amp; Compliance</button>
+    <button class="filter-btn">Privacy</button>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section class="featured-wrap">
+  <div class="container">
+    <span class="featured-label">Featured Article</span>
+    <div class="featured-card">
+
+      <!-- Main featured -->
+      <div class="featured-main">
+        <div class="meta">
+          <span class="cat-tag problem">The Problem</span>
+          <span class="read-time">7 min read</span>
+        </div>
+        <h2>
+          <a href="/blog/teachers-using-ai-without-approval">
+            Your Teachers Are Already Using AI. You Just Don't Have a Policy for It Yet.
+          </a>
+        </h2>
+        <p class="excerpt">68% of teachers now use AI tools weekly. Most of them are doing it without district approval, without privacy vetting, and without any policy governing how student data is handled. That's not their fault. It's a leadership gap — and it's one that closes faster than you think.</p>
+        <a href="/blog/teachers-using-ai-without-approval" class="read-link">Read the article →</a>
+      </div>
+
+      <!-- Aside: 2 more articles -->
+      <aside class="featured-aside">
+        <span class="aside-label">Also This Week</span>
+
+        <div class="aside-article">
+          <div class="meta">
+            <span class="cat-tag insight">Insight</span>
+            <span class="read-time">6 min read</span>
+          </div>
+          <h3>
+            <a href="/blog/five-questions-before-approving-ai-tools">
+              5 Questions Every K-8 Principal Should Be Able to Answer About AI Before a Parent Asks First
+            </a>
+          </h3>
+          <p>Most schools approach AI policy backwards. They start with tools. They should start with governance. Here's the framework.</p>
+        </div>
+
+        <div class="aside-article">
+          <div class="meta">
+            <span class="cat-tag urgency">Policy &amp; Compliance</span>
+            <span class="read-time">5 min read</span>
+          </div>
+          <h3>
+            <a href="/blog/ohio-ai-policy-mandate-2026">
+              Ohio's AI Policy Mandate Is Real. Here's What K-8 Schools Need to Do Before July 2026.
+            </a>
+          </h3>
+          <p>Ohio requires every public district to adopt an AI policy by July 1, 2026. Here's exactly what the model policy requires — and the fastest path to compliance.</p>
+        </div>
+
+        <div class="aside-article">
+          <div class="meta">
+            <span class="cat-tag vision">Vision</span>
+            <span class="read-time">6 min read</span>
+          </div>
+          <h3>
+            <a href="/blog/what-ai-ready-k8-school-looks-like">
+              What a K-8 School That's Genuinely Ready for AI Actually Looks Like
+            </a>
+          </h3>
+          <p>A principal who walks into a board meeting with a clear, defensible answer. Here's the picture of what 90 days of doing this carefully produces.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ALL SIX ARTICLES GRID -->
+<section class="articles-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>All Articles</h2>
+      <a href="#" class="see-all">View Archive →</a>
+    </div>
+
+    <div class="article-grid">
+
+      <!-- Article 1 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag problem">The Problem</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">7 min</span>
+        </div>
+        <h3><a href="/blog/teachers-using-ai-without-approval">Your Teachers Are Already Using AI. You Just Don't Have a Policy for It Yet.</a></h3>
+        <p>68% of teachers use AI weekly. Most without approval, privacy vetting, or any policy governing student data. Here's why that's a leadership gap — and how to close it.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/teachers-using-ai-without-approval" class="read-link">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag insight">Insight</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">6 min</span>
+        </div>
+        <h3><a href="/blog/five-questions-before-approving-ai-tools">5 Questions Every K-8 Principal Should Be Able to Answer About AI Before a Parent Asks First</a></h3>
+        <p>Most schools start with tools. The ones that get this right start with governance. Five questions that reveal exactly where your school stands — and what to build next.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/five-questions-before-approving-ai-tools" class="read-link">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag urgency">Policy &amp; Compliance</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">5 min</span>
+        </div>
+        <h3><a href="/blog/ohio-ai-policy-mandate-2026">Ohio's AI Policy Mandate Is Real. Here's What K-8 Schools Need to Do Before July 2026.</a></h3>
+        <p>Ohio requires every public district to adopt an AI policy by July 1, 2026. Here's what the model policy requires and the fastest defensible path to compliance.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/ohio-ai-policy-mandate-2026" class="read-link">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag vision">Vision</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">6 min</span>
+        </div>
+        <h3><a href="/blog/what-ai-ready-k8-school-looks-like">What a K-8 School That's Genuinely Ready for AI Actually Looks Like</a></h3>
+        <p>A principal who walks into a board meeting with a clear, defensible answer. A parent letter that builds trust. Here's the picture of what 90 days of doing this carefully produces.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/what-ai-ready-k8-school-looks-like" class="read-link">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag insight">Insight</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">7 min</span>
+        </div>
+        <h3><a href="/blog/ai-vendor-vetting-checklist-k8-schools">How to Vet an AI Tool Before It Touches Your Students' Data: 7 Questions Every K-8 School Must Ask</a></h3>
+        <p>Most schools approve AI tools based on a demo and a price. Here are the seven questions your privacy review needs to ask — and the answers that disqualify a tool immediately.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/ai-vendor-vetting-checklist-k8-schools" class="read-link">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="article-card">
+        <div class="meta">
+          <span class="cat-tag problem">The Problem</span>
+          <span class="read-time" style="font-size:0.72rem;color:var(--ink-light);margin-left:0.5rem;">6 min</span>
+        </div>
+        <h3><a href="/blog/school-board-ai-question-unprepared">Your School Board Is About to Ask About AI. Here's How to Not Get Caught Flat-Footed.</a></h3>
+        <p>More school boards are adding AI governance to their meeting agendas in 2026. Here's exactly what they're asking — and how to walk in with answers rather than apologies.</p>
+        <div class="card-footer">
+          <span class="date">May 2026</span>
+          <a href="/blog/school-board-ai-question-unprepared" class="read-link">Read →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CTA STRIP -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Want all of this <em>already done for you?</em></h2>
+    <div class="cta-actions">
+      <a href="https://www.k-8ai.com#subscribe" class="btn-primary">Free Checklist</a>
+      <a href="https://blueprint.k-8ai.com" class="btn-ghost">See the Blueprint →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 K-8 AI — Written by Ryan David</span>
+    <div class="footer-links">
+      <a href="https://www.k-8ai.com">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="https://blueprint.k-8ai.com">Blueprint</a>
+      <a href="https://www.k-8ai.com#subscribe">Free Checklist</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Category filter interaction
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
