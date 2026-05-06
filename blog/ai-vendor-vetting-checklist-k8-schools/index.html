@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Vendor Vetting for K-8 Schools: 7 Questions to Ask — K-8 AI</title>
+  <meta name="description" content="Before any AI tool touches your students' data, ask these 7 questions. The K-8 school privacy vetting checklist — COPPA, FERPA, DPA, and what disqualifies a tool immediately." />
+  <meta property="og:title" content="AI Vendor Vetting for K-8 Schools: 7 Questions to Ask" />
+  <meta property="og:description" content="Before any AI tool touches your students' data, ask these 7 questions. COPPA, FERPA, DPA — and what disqualifies a tool immediately." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.k-8ai.com/blog/ai-vendor-vetting-checklist-k8-schools" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Vendor Vetting for K-8 Schools: 7 Questions to Ask","author":{"@type":"Person","name":"Ryan David"},"publisher":{"@type":"Organization","name":"K-8 AI"},"datePublished":"2026-05-06","url":"https://www.k-8ai.com/blog/ai-vendor-vetting-checklist-k8-schools"}</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2334322d'/%3E%3Ctext x='2' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3EK%3C/text%3E%3Ctext x='13' y='23' font-family='Georgia,serif' font-size='19' font-weight='bold' fill='%230081f2'%3E/%3C/text%3E%3Ctext x='21' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23f8f8f7'%3E8%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root{--cream:#f8f8f7;--ink:#34322d;--ink-mid:#5c5a55;--ink-light:#9a9890;--blue:#0081f2;--blue-dk:#0068c4;--blue-pale:#eaf3fe;--white:#ffffff;--rule:#dddbd6;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--max:1080px;--pad:clamp(1.25rem,5vw,2.5rem)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+    .wordmark{display:inline-flex;align-items:baseline;font-family:var(--serif);font-size:1.3rem;letter-spacing:-0.01em;color:var(--ink);line-height:1}
+    .wordmark .slash{color:var(--blue);margin-inline:0.04em}
+    .wordmark .small{font-family:var(--sans);font-weight:300;font-size:1rem;letter-spacing:0.04em}
+    nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--rule)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-block:0.9rem}
+    .nav-links{display:flex;align-items:center;gap:1.75rem}
+    .nav-links a{font-size:0.82rem;color:var(--ink-mid);letter-spacing:0.02em;transition:color 0.15s}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue)}
+    .btn-primary{background:var(--blue);color:var(--white);font-size:0.78rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.45rem 1rem;border-radius:2px;transition:background 0.15s;display:inline-block}
+    .btn-primary:hover{background:var(--blue-dk);color:var(--white)}
+    .article-header{padding-block:3rem 2rem;border-bottom:1px solid var(--rule);max-width:720px}
+    .breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.72rem;color:var(--ink-light);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--blue)}
+    .cat-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);border:1px solid var(--blue);padding:0.18rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:1rem}
+    .article-header h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:1rem}
+    .article-meta{display:flex;align-items:center;gap:1rem;font-size:0.78rem;color:var(--ink-light)}
+    .article-meta .author{color:var(--ink-mid);font-weight:500}
+    .article-meta .divider{width:1px;height:0.9rem;background:var(--rule)}
+    .article-wrap{display:grid;grid-template-columns:1fr 280px;gap:4rem;padding-block:3rem;align-items:start}
+    .article-body p{font-size:1.0125rem;color:var(--ink-mid);line-height:1.8;margin-bottom:1.5rem}
+    .article-body p strong{color:var(--ink);font-weight:600}
+    .article-body h2{font-family:var(--serif);font-size:1.45rem;line-height:1.25;letter-spacing:-0.01em;color:var(--ink);margin-top:2.5rem;margin-bottom:0.9rem}
+    .pullquote{border-left:3px solid var(--blue);padding:0.75rem 1.5rem;margin:2rem 0;background:var(--blue-pale)}
+    .pullquote p{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--ink);margin-bottom:0;line-height:1.55}
+    .question-card{border:1px solid var(--rule);background:var(--white);margin:1.75rem 0;overflow:hidden}
+    .question-header{background:var(--ink);padding:0.9rem 1.25rem;display:flex;align-items:baseline;gap:1rem}
+    .question-num{font-family:var(--serif);font-size:1.5rem;color:var(--blue);line-height:1;flex-shrink:0}
+    .question-title{font-family:var(--serif);font-size:1rem;color:var(--white);line-height:1.35}
+    .question-body{padding:1.25rem}
+    .question-body p{font-size:0.92rem;margin-bottom:0.75rem}
+    .question-body p:last-child{margin-bottom:0}
+    .answer-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:1rem}
+    .answer-cell{background:var(--white);padding:0.75rem 1rem}
+    .answer-label{font-size:0.58rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.35rem;display:block}
+    .answer-label.good{color:#1a6b3c}
+    .answer-label.bad{color:#c0392b}
+    .answer-cell p{font-size:0.82rem;color:var(--ink-mid);margin-bottom:0;line-height:1.5}
+    .rule-box{border:1px solid var(--rule);background:var(--ink);padding:1.5rem 1.75rem;margin:2rem 0}
+    .rule-box .label{font-size:0.6rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;display:block}
+    .rule-box p{font-size:0.95rem;color:var(--white);line-height:1.7;margin-bottom:0;font-style:italic}
+    .rule-box p strong{color:#7fb3ff;font-style:normal}
+    .cta-box{background:var(--ink);padding:2rem;margin-top:3rem;border-top:3px solid var(--blue)}
+    .cta-box .label{font-size:0.6rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;display:block}
+    .cta-box h3{font-family:var(--serif);font-size:1.3rem;color:var(--white);line-height:1.3;margin-bottom:0.75rem}
+    .cta-box p{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:1.25rem}
+    .cta-box .doc-list{list-style:none;margin-bottom:1.5rem}
+    .cta-box .doc-list li{font-size:0.82rem;color:rgba(255,255,255,0.6);padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;gap:0.6rem;align-items:baseline}
+    .cta-box .doc-list li:last-child{border-bottom:none}
+    .cta-box .doc-list li::before{content:'/';color:var(--blue);font-weight:600;font-size:0.8rem;flex-shrink:0}
+    .btn-cta{display:inline-block;background:var(--blue);color:var(--white);font-size:0.82rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:0.7rem 1.4rem;border-radius:2px;transition:background 0.15s}
+    .btn-cta:hover{background:var(--blue-dk);color:var(--white)}
+    .sidebar{position:sticky;top:5rem}
+    .sidebar-card{background:var(--white);border:1px solid var(--rule);padding:1.5rem;margin-bottom:1.5rem}
+    .sidebar-card .label{font-size:0.6rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-light);margin-bottom:1rem;display:block}
+    .sidebar-card+.sidebar-card{border-top:2px solid var(--blue)}
+    .sidebar-related{list-style:none}
+    .sidebar-related li{padding:0.7rem 0;border-bottom:1px solid var(--rule)}
+    .sidebar-related li:last-child{border-bottom:none}
+    .sidebar-related li a{font-size:0.84rem;color:var(--ink);line-height:1.4;display:block}
+    .sidebar-related li a:hover{color:var(--blue)}
+    .sidebar-related li .tag{font-size:0.58rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-light);display:block;margin-bottom:0.25rem}
+    footer{border-top:1px solid var(--rule);padding-block:1.75rem;margin-top:4rem}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.75rem;color:var(--ink-light)}
+    .footer-nav{display:flex;gap:1.5rem}
+    .footer-nav a{font-size:0.75rem;color:var(--ink-light);transition:color 0.15s}
+    .footer-nav a:hover{color:var(--blue)}
+    @media(max-width:768px){.article-wrap{grid-template-columns:1fr}.sidebar{position:static}.nav-links{display:none}.answer-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="https://www.k-8ai.com" class="wordmark">K-8<span class="slash">/</span><span class="small">AI</span></a>
+    <div class="nav-links">
+      <a href="https://www.k-8ai.com">Home</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="https://blueprint.k-8ai.com">Blueprint</a>
+      <a href="https://www.k-8ai.com#about">About</a>
+    </div>
+    <a href="https://www.k-8ai.com#subscribe" class="btn-primary">Free Checklist</a>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="article-header">
+    <div class="breadcrumb"><a href="/blog">Blog</a><span>/</span><span>Privacy</span></div>
+    <div class="cat-tag">Privacy</div>
+    <h1>How to Vet an AI Tool Before It Touches Your Students' Data: 7 Questions Every K-8 School Must Ask</h1>
+    <div class="article-meta">
+      <span class="author">Ryan David</span>
+      <span class="divider"></span>
+      <span>May 6, 2026</span>
+      <span class="divider"></span>
+      <span>7 min read</span>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+    <article class="article-body">
+
+      <p>A curriculum director at a K-8 school told me recently that her staff had approved three AI tools in the past year. The process each time: a teacher presented the tool at a staff meeting, colleagues liked the demo, and it went on the approved list. No privacy review. No vendor questions. No DPA.</p>
+      <p>She wasn't describing negligence. She was describing what most K-8 schools do. The traditional edtech vetting process — check the price, confirm it runs on your devices, make sure kids can log in — was never designed for AI tools. And AI tools are fundamentally different from a reading app or a quiz platform.</p>
+      <p>The difference is this: a traditional edtech tool uses your data to deliver its service. An AI tool may use your data to <em>improve itself</em>. Student work, queries, and outputs becoming training data is not a theoretical concern — it is a documented practice at multiple consumer AI platforms, and the default setting is often opt-in rather than opt-out. Schools that don't ask the question don't know which side of that line they're on.</p>
+
+      <div class="pullquote"><p>"The traditional edtech vetting process was never designed for AI tools. AI tools are fundamentally different — and the questions you need to ask are too."</p></div>
+
+      <p>Here are the seven questions your privacy review must ask before any AI tool is approved for use with student data. For each one: why it matters, what a good answer looks like, and what disqualifies a tool immediately.</p>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">1</div><div class="question-title">What student data does this tool collect — specifically?</div></div>
+        <div class="question-body">
+          <p>Do not accept "we take privacy seriously" or a link to a 40-page privacy policy. Ask the vendor for a written data map: what categories of data are collected, when, and for what purpose. If they cannot produce one, that is your answer.</p>
+          <p>The categories to ask about explicitly: student names, email addresses, age or grade level, school name, assignment content, query history, usage patterns, device identifiers, and any inferred attributes. Each one is a potential compliance exposure under FERPA and, for students under 13, COPPA.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>A written data inventory listing specific categories, collection triggers, and stated purposes — provided in response to your direct question.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>A referral to the general privacy policy with no vendor-specific response. Silence is also disqualifying.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">2</div><div class="question-title">Is student data used to train AI models?</div></div>
+        <div class="question-body">
+          <p>This is the question most schools forget to ask — and the most consequential one. Many free and freemium AI tools use input data to improve their underlying models. That means student work, questions, and outputs may become part of a training dataset. This is a FERPA violation if student PII is involved, and a COPPA issue for under-13 students.</p>
+          <p>The answer must be "no" in writing before the tool can be approved. If the vendor says "yes, but you can opt out," your next question is: what is the opt-out process, does it apply retroactively, and does opting out affect tool functionality? Get every answer in writing.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>"No, student data entered into our platform is never used to train AI models." In writing, on vendor letterhead or in the DPA.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"By default, yes — but you can opt out." Any ambiguity here is disqualifying until fully resolved in writing.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">3</div><div class="question-title">Will the vendor sign your Data Processing Agreement?</div></div>
+        <div class="question-body">
+          <p>A Data Processing Agreement is the legal mechanism that makes a vendor a "school official" under FERPA — giving them legitimate access to student education records under defined, limited conditions. Without a signed DPA, any sharing of student data with that vendor is an unauthorized disclosure under federal law, regardless of how the tool is being used.</p>
+          <p>This is not negotiable and not optional. If a vendor will not sign a DPA, they cannot be approved for any use involving student personally identifiable information. Full stop. Some vendors — particularly consumer-grade tools not designed for K-12 — will decline. That is your answer.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>"Yes, we have a standard DPA for K-12 schools" or "Yes, we will review and sign your school's DPA."</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"We don't sign DPAs" or "Our terms of service cover this." Neither is a substitute for a signed DPA.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">4</div><div class="question-title">Where is student data stored, and for how long?</div></div>
+        <div class="question-body">
+          <p>Data stored indefinitely is data at risk indefinitely. The FTC's 2025 COPPA update — fully effective April 2026 — specifically strengthened limits on data retention, requiring that covered services retain personal information from children only as long as reasonably necessary. Schools should ask for written retention and deletion terms before approving any tool.</p>
+          <p>Ask specifically: where are servers located, what is the retention period for student data, and what is the deletion process when a school ends its contract or a student leaves?</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>Specific retention timeframes in writing, a documented deletion process, and confirmation of server location.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"We retain data as long as your account is active" with no further specificity, or no written answer at all.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">5</div><div class="question-title">Does the tool support COPPA compliance for students under 13?</div></div>
+        <div class="question-body">
+          <p>COPPA applies to online services that collect personal information from children under 13. It requires verifiable parental consent — or a school operator exception — before any personal data is collected. The FTC's 2025 update expanded the definition of personal information and tightened consent requirements, particularly around third-party data sharing.</p>
+          <p>Many AI tools with chat interfaces, content generation features, or usage analytics are covered under COPPA for elementary-age students. Ask the vendor whether the tool is designed for COPPA compliance, what consent mechanism they use, and whether they have received any COPPA-related enforcement actions. Get it in writing.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>Written confirmation of COPPA compliance, the specific consent mechanism used, and a clear statement about third-party data sharing.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"Our tool is intended for users 13 and older" — without a plan for how your K-5 students are excluded or protected.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">6</div><div class="question-title">Can school administrators disable AI features not yet approved?</div></div>
+        <div class="question-body">
+          <p>AI tools are not static. Vendors push feature updates and introduce new AI functionality — sometimes without prominent notice. A tool you approved for lesson planning in September may have a student-facing AI chatbot added in November. If you cannot control which features are active in your environment, you are approving the tool's future state as well as its current one.</p>
+          <p>Admin-level feature controls give you the ability to pilot carefully, expand deliberately, and respond when something changes that you haven't reviewed. If a vendor cannot offer feature-level control, you are accepting all-or-nothing adoption — rarely the right posture for a K-8 school in year one.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>An admin console with documented feature controls, or a written process for disabling specific AI features on request.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"All features are included and cannot be individually disabled." Proceed with heightened caution or not at all.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header"><div class="question-num">7</div><div class="question-title">Has the vendor evaluated bias, accuracy, and safety risks — and can they share documentation?</div></div>
+        <div class="question-body">
+          <p>AI tools can produce biased, inaccurate, or developmentally inappropriate content. A tool that confidently generates a wrong answer looks identical to one that generates a correct one. For K-8 students — particularly grades 3-5 who are developing critical thinking skills — this is a real instructional risk, not just an abstract concern.</p>
+          <p>The EDSAFE AI Alliance's SAFE framework organizes AI governance around Safety, Accountability, Fairness and Transparency, and Efficacy. Ask vendors whether they have conducted a bias evaluation, what their process is for flagging inaccurate outputs, and whether the tool has been tested with K-8 student populations. A vendor who cannot answer these questions has not done the work.</p>
+          <div class="answer-row">
+            <div class="answer-cell"><span class="answer-label good">Acceptable answer</span><p>Documentation of a bias evaluation process, a content safety framework, and evidence of K-12 testing. Willingness to discuss specifics.</p></div>
+            <div class="answer-cell"><span class="answer-label bad">Disqualifying answer</span><p>"Our AI is powered by [large model name]" with no additional safety or bias evaluation information specific to their implementation.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>The Baseline Rule to Post Before Any Tool Is Approved</h2>
+      <p>The seven questions above apply to any tool under formal review. But you need a floor in place even before a single tool has been vetted — a rule that applies immediately, to every staff member, regardless of where the approval process stands.</p>
+
+      <div class="rule-box">
+        <span class="label">The Prohibited-Data Rule — Post This Now</span>
+        <p>"Staff and students may not enter <strong>student names, contact information, grades, assessment data, discipline records, IEP or 504 information, health information, family information, photos, voice recordings, or other personally identifiable student information</strong> into any AI tool that has not been reviewed and approved by the school."</p>
+      </div>
+
+      <p>That rule does not require a completed policy. It can go out in a staff email today. It is enforceable immediately. And it covers the most common privacy exposure — a teacher entering student information into a consumer AI tool without realizing the implications — before your formal vetting process is complete.</p>
+
+      <h2>One Tool at a Time</h2>
+      <p>The instinct when building an approved-tool list is to evaluate everything at once. Resist it. Evaluate one tool for one specific use case, get the DPA signed, document the answers to these seven questions, and approve it for that use. Then do the next one.</p>
+      <p>A short approved-tool list with documented answers is a defensible governance record. A long list assembled quickly, without documentation, is a liability. School boards, parents, and attorneys will ask different questions depending on which one you have.</p>
+      <p>The work of building that record is not glamorous. But it is the work that turns "we use AI responsibly" from a statement of intention into a statement of fact.</p>
+
+      <div class="cta-box">
+        <span class="label">The 90-Day AI Launch Plan</span>
+        <h3>The vendor vetting checklist, already built and ready to send.</h3>
+        <p>The 90-Day AI Launch Plan includes a one-page vendor review form with all seven questions formatted for vendor response — plus the prohibited-data rule, staff and student acceptable-use policies, family communication template, and the full week-by-week implementation sequence. All editable. All ready for your school's name.</p>
+        <ul class="doc-list">
+          <li>Vendor review form — 7 questions, formatted for vendor response</li>
+          <li>Prohibited-data rule — one sentence, enforceable immediately</li>
+          <li>Approved-tool list template — with DPA status tracking</li>
+          <li>Staff and student AUP — editable by grade band</li>
+          <li>Family privacy communication — plain English, no legal jargon</li>
+          <li>90-day week-by-week roadmap with decision gates</li>
+        </ul>
+        <a href="https://blueprint.k-8ai.com" class="btn-cta">See the Blueprint →</a>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <span class="label">Free Resource</span>
+        <div style="font-family:var(--serif);font-size:0.95rem;line-height:1.35;margin-bottom:0.5rem;">The AI Policy Checklist for K-8 School Leaders</div>
+        <p style="font-size:0.8rem;color:var(--ink-mid);line-height:1.55;margin-bottom:1rem;">Five things to get right before your school goes any further with AI. Free. Delivered immediately.</p>
+        <a href="https://www.k-8ai.com#subscribe" class="btn-cta" style="font-size:0.75rem;padding:0.55rem 1rem;">Get the Free Checklist</a>
+      </div>
+      <div class="sidebar-card">
+        <span class="label">Related Articles</span>
+        <ul class="sidebar-related">
+          <li><span class="tag">The Problem</span><a href="/blog/teachers-using-ai-without-approval">Your Teachers Are Already Using AI Without Approval. Now What?</a></li>
+          <li><span class="tag">Insight</span><a href="/blog/five-questions-before-approving-ai-tools">5 Questions Every K-8 Principal Should Be Able to Answer About AI Before a Parent Asks First</a></li>
+          <li><span class="tag">Policy &amp; Compliance</span><a href="/blog/ohio-ai-policy-mandate-2026">Ohio's AI Policy Mandate Is Real. Here's What K-8 Schools Need to Do Before July 2026.</a></li>
+          <li><span class="tag">Vision</span><a href="/blog/what-ai-ready-k8-school-looks-like">What a K-8 School That's Genuinely Ready for AI Actually Looks Like</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 K-8 AI — Written by Ryan David</span>
+    <nav class="footer-nav">
+      <a href="/blog">Blog</a>
+      <a href="https://www.k-8ai.com#subscribe">Free Checklist</a>
+      <a href="https://blueprint.k-8ai.com">Blueprint</a>
+      <a href="https://www.k-8ai.com#about">About</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
