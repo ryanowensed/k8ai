@@ -58,7 +58,7 @@ export default async function handler(req, res) {
           <a href="${PDF_URL}" style="color:#0081f2;word-break:break-all;">${PDF_URL}</a></p>
 
           <p style="font-size:0.8rem;color:#9a9890;border-top:1px solid #dddbd6;padding-top:1rem;margin-top:1rem;">
-            K-8 AI &mdash; Written by Ryan David &mdash; <a href="https://k-8ai.com" style="color:#0081f2;">k-8ai.com</a><br>
+            K-8 AI &mdash; Written by Ryan David, creator of <a href="https://theaiclassroomhub.com" style="color:#0081f2;">The AI Classroom Hub</a> &mdash; <a href="https://k-8ai.com" style="color:#0081f2;">k-8ai.com</a><br>
             You're receiving this because you requested the free AI Policy Checklist.
           </p>
         </div>`
@@ -77,7 +77,7 @@ export default async function handler(req, res) {
           </div>
 
           <p style="font-size:0.8rem;color:#9a9890;border-top:1px solid #dddbd6;padding-top:1rem;margin-top:1rem;">
-            K-8 AI &mdash; Written by Ryan David &mdash; <a href="https://k-8ai.com" style="color:#0081f2;">k-8ai.com</a><br>
+            K-8 AI &mdash; Written by Ryan David, creator of <a href="https://theaiclassroomhub.com" style="color:#0081f2;">The AI Classroom Hub</a> &mdash; <a href="https://k-8ai.com" style="color:#0081f2;">k-8ai.com</a><br>
             You're receiving this because you subscribed to the K-8 AI weekly read.
           </p>
         </div>`
